@@ -10,6 +10,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "chalk": "^2.4.2",
     "discord.js": "^11.5.1",
     "express": "^4.16.4"
   },
