@@ -1,5 +1,6 @@
  const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
+//REAL CODE
 
 exports.run = (client, message, params) => {
     if (!message.guild) {

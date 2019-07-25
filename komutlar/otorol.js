@@ -6,7 +6,8 @@ module.exports.run = async (client, message, args) => {
   if (!args.join(" ").trim()) return message.channel.send('')
   
 
-  
+  //REAL CODE
+
   db.set(`autoRole_${message.guild.id}`, args.join(" ").trim()).then(otorol => {
     if (!message.guild.roles.find(`name`, otorol)) return message.channel.send("Rol bulunamadı")
       message.channel.send(`Otorol Rolü Başarıyla **${otorol}** olarak ayarlandı!`)

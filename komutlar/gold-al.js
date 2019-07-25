@@ -2,7 +2,8 @@ const db = require('quick.db')
 const Discord = require('discord.js')
 const client = new Discord.Client();
 exports.run = async (bot, message, args) => {
- 
+ //REAL CODE
+
   if (message.author.id !== '459054720938672139') return;
   let nesne = args[0]
   if (!nesne) return message.channel.send('Bir kullanıcının IDsini girmelisin?')

@@ -3,7 +3,8 @@ const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
  
 exports.run = async (client, message, args) => {
-  
+  //REAL CODE
+
   const sayacsayi = await db.fetch(`sayac_${message.guild.id}`);
   const sayackanal = message.mentions.channels.first()
   

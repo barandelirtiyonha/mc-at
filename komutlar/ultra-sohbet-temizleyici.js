@@ -3,6 +3,7 @@ const request = require('node-superfetch');
 const db = require('quick.db');
 const { stripIndents } = require('common-tags');
 const snekfetch = require("snekfetch");
+//REAL CODE
 
 exports.run = async (client, message, args) => {
 db.fetch(`usohbet_${message.channel.id}`).then(usdurum => {

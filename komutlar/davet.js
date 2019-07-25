@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('../ayarlar.json');
+//REAL CODE
 
 exports.run = (client, message) => {
   const embed = new Discord.RichEmbed()

@@ -1,6 +1,7 @@
 exports.run = function(client, message, args) {
         message.channel.send("Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın :shrug: Örnek Kullanım : \n ```css !sayaç-ayarla #kanal <Sayı>``` ");
     };
+//REAL CODE
 
 module.exports.conf = {
   enabled: true,
