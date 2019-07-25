@@ -91,6 +91,7 @@ client.load = command => {
 
 
 
+
 client.unload = command => {
     return new Promise((resolve, reject) => {
         try {
@@ -108,6 +109,29 @@ client.unload = command => {
 };
 
 
+
+
+///////////////////////////////////////////////////////////
+
+client.on("message", async message => {
+
+if( message.content === "sa" || message.content === "Sa" || message.content === "Selamın Aleyküm" || message.content === "selamın aleyküm" || message.content === "sea" || message.content === "Sea") {
+
+let gold = require("quick.db").fetch(`tios_gold${message.author.id}`)
+if (gold === "gold") {
+
+  const embed = new Discord.RichEmbed()
+  .setColor("GOLD")
+  .setDescription(" Hizaya Geçin Bu Bir **Gold** Üye ! ")
+  message.channel.send({embed})
+
+  } else {
+
+return;
+
+  }
+}
+})
 
 //////////////////////////////////////////////////////////
 

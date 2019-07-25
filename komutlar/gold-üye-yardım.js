@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
   .setTitle("CS-AT BOT")
   .setDescription('')
   .setColor("GOLD")
-      .setDescription('**!Yardım** ile yardım alabilirsiniz. \n botu davet etmek için \`!davet\`. \n örnek komut kullanımı: \`!küfür-filtre aç\`.  \n **!komutlar** (1) \n herkesin kullanabileceği standart komutlar. \n \`davet\`,\n **!eğlence(2)** \n herkes için kullanılabilecek eğlence komutları. \n  \`aşk-ölçer\`,\`blıktut\` \n **!moderasyon ()** \n yetkililer için moderasyon komutları. \n \`!küfür-filtre aç\`,\`!capslock-filtresi\`,\`reklam-filtresi\`,\`!koruma-sistemi\`')
+      .setDescription('Hep Daha İleriye Bizimle! \n **Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** ')
       .setFooter('© CS-AT BOT')
 
   if (!params[0]) {
@@ -27,12 +27,12 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['Yardım'],
+  aliases: ['gold-üye'],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'yardım',
-  description: 'Tüm komutları gösterir.',
-  usage: 'yardım [komut]'
+  name: 'gold-üye',
+  description: 'gold-üye.',
+  usage: 'gold-üye '
 };
