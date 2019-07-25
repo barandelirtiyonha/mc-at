@@ -107,9 +107,45 @@ client.unload = command => {
     });
 };
 
+
+
 //////////////////////////////////////////////////////////
 
+client.on('guildMemberAdd', member => {
+ let guvenlik= db.fetch(`bottemizle_${member.guild.id}`)
+    if (!guvenlik) return;
+    if(member.user.bot !==true){
+    } else {
+   member.kick(member) 
+  }  
+  });
 
+//////////////////////////////////////////////////////////
+
+client.on("message", async msg => {
+  db.fetch(`kufur_${msg.guild.id}`).then(i => {
+if (i == 'Açık') {
+        const kufur = ["discord.gg","https//",".com",".xyz",".net"];
+        if (kufur.some(word => msg.content.includes(word))) {
+          try {
+             if (!msg.member.hasPermission("BAN_MEMBERS")) {
+                  
+     
+               
+               msg.delete(); 
+             
+
+                  return msg.reply('Reklam yapmamalısın.').then(msg => msg.delete(3000));
+             }
+          } catch(err) {
+            console.log(err);
+          }
+        } } else if (i == 'Kapalı') {
+
+}
+
+})
+});
 
 
 /////////////////////////////////////////////////////////

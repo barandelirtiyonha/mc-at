@@ -5,11 +5,12 @@ var prefix = ayarlar.prefix;
 
 exports.run = (client, message, params) => {
   const embedyardim = new Discord.RichEmbed()
-  .setTitle("Komut Listesi")
+  
+  .setTitle("[CS-AT BOT](https://discordapp.com/oauth2/authorize?client_id=603998114361114674&scope=bot&permissions=805306558)")
   .setDescription('')
   .setColor(0x00ffff)
-      .setDescription('**!Yardım** ile yardım alabilirsiniz. \n botu davet etmek için \`!davet\`. \n örnek komut kullanımı: \`!küfür-filtre aç\`.  \n **!komutlar** (1) \n herkesin kullanabileceği standart komutlar. \n \`davet\` \n **!eğlence(2)** \n herkes için kullanılabilecek eğlence komutları. \n  \`aşk-ölçer\` \`blıktut\` \n **!moderasyon ()** \n ')
-      .setFooter('© CS-AT')
+      .setDescription('**!Yardım** ile yardım alabilirsiniz. \n botu davet etmek için \`!davet\`. \n örnek komut kullanımı: \`!küfür-filtre aç\`.  \n **!komutlar** (1) \n herkesin kullanabileceği standart komutlar. \n \`davet\`,\n **!eğlence(2)** \n herkes için kullanılabilecek eğlence komutları. \n  \`aşk-ölçer\`,\`blıktut\` \n **!moderasyon ()** \n yetkililer için moderasyon komutları. \n \`!küfür-filtre aç\`,\`!capslock-filtresi\`,\`reklam-filtresi\`,\`!koruma-sistemi\`')
+      .setFooter('© CS-AT BOT')
 
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
