@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
   .setTitle("Komut Listesi")
   .setDescription('')
   .setColor(0x00ffff)
-      .setDescription('!Yardım ile yardım alabilirsiniz. \n ')
+      .setDescription('**!Yardım** ile yardım alabilirsiniz. \n botu davet etmek için \`!davet\`. \n örnek komut kullanımı: \`!küfür-filtre aç\`.  \n **!komutlar** (1) \n herkesin kullanabileceği standart komutlar. \n \`davet\` \n **!eğlence** \n herkes için kullanılabilecek eğlence komutları. \n  \`aşk-ölçer\` \`blıktut\`')
       .setFooter('© CS-AT')
 
   if (!params[0]) {
