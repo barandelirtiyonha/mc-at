@@ -107,6 +107,37 @@ client.unload = command => {
     });
 };
 
+//////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////
+
+client.on("message", async msg => {
+
+
+  const i = await db.fetch(`ssaass_${msg.guild.id}`);
+    if (i == 'acik') {
+      if (msg.content.toLowerCase() == 'selam' || msg.content.toLowerCase() == 'sa' || 
+msg.content.toLowerCase() == 'Selam Naber') {
+          try {
+
+                  return msg.reply('Aleyküm Selam')
+          } catch(err) {
+            console.log(err);
+          }
+      }
+    }
+    else if (i == 'kapali') {
+    
+    }
+    if (!i) return;
+
+    });
+
+////////////////////////////////////////////////////////
+
 client.on("message", async msg => {
   db.fetch(`kufur_${msg.guild.id}`).then(i => {
 if (i == 'Açık') {
@@ -131,6 +162,8 @@ if (i == 'Açık') {
 
 })
 });
+
+////////////////////////////////////////////////////////////
 
 
 client.elevation = message => {
@@ -158,4 +191,3 @@ client.on('error', e => {
 });
 
 client.login(ayarlar.token);
-//XiR
