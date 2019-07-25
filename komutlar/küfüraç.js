@@ -26,7 +26,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'küfür-engelle',
+  name: 'küfür-filtre',
   description: 'küfürengel',
   usage: 'küfür'
 }
