@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
   .setTitle("CS-AT BOT")
   .setDescription('')
   .setColor("GOLD")
-      .setDescription('**!Yardım** ile yardım alabilirsiniz. \n botu davet etmek için \`!davet\`. \n örnek komut kullanımı: \`!küfür-filtre aç\`.  \n **!komutlar (1)** \n herkesin kullanabileceği standart komutlar. \n \`davet\`,\`gold\` \n **!eğlence(2)** \n herkes için kullanılabilecek eğlence komutları. \n  \`aşk-ölçer\`,\`blıktut\` \n **!moderasyon (4)** \n yetkililer için moderasyon komutları. \n \`!küfür-filtre aç\`,\`!capslock-filtresi\`,\`reklam-filtresi\`,\`!koruma-sistemi\`,\`sayaç\,\`otorol\`')
+      .setDescription('**!Yardım** ile yardım alabilirsiniz. \n botu davet etmek için \`!davet\`. \n örnek komut kullanımı: \`!küfür-filtre aç\`.  \n **!komutlar (1)** \n herkesin kullanabileceği standart komutlar. \n \`davet\`,\`gold\` \n **!eğlence(2)** \n herkes için kullanılabilecek eğlence komutları. \n  \`aşk-ölçer\`,\`blıktut\`,\`kralol\` \n **!moderasyon (4)** \n yetkililer için moderasyon komutları. \n \`!küfür-filtre aç\`,\`!capslock-filtresi\`,\`reklam-filtresi\`,\`!koruma-sistemi\`,\`sayaç\,\`otorol\`')
       .setFooter('© CS-AT BOT')
 
   if (!params[0]) {

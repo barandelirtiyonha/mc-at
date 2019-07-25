@@ -108,8 +108,16 @@ client.unload = command => {
         }
     });
 };
+////////////////////////////////////////////////////
 
-
+client.on("message",message => {
+  if(!message.author.bot) return;
+  db.fetch(`usohbet_${message.channel.id}`).then(usdurum => {
+    if(!usdurum || usdurum === 'pasif') return;
+    else {
+      message.delete(3500)
+    }
+})})
 
 /////////////////////////////////////////////////////////
 
@@ -119,10 +127,10 @@ client.on('ready', () => {
         warnBuffer: 3, 
         maxBuffer: 5,
         interval: 2000, 
-        warningMessage: "please stop spamming!", // İleti kullanıcıları uyarıldığında alır. (mesaj '@ Kullanıcı' ile başlar, bu yüzden sadece devam etmek için giriş yapmanız gerekir..) 
-        banMessage: "has been hit by ban hammer for spamming!", // MKullanıcı yasaklandığında yazılı mesaj gönderilir. (mesaj '@ Kullanıcı' ile başlar, bu yüzden sadece devam etmek için giriş yapmanız gerekir..) 
+        warningMessage: "lütfen spamı durdurun!", // İleti kullanıcıları uyarıldığında alır. (mesaj '@ Kullanıcı' ile başlar, bu yüzden sadece devam etmek için giriş yapmanız gerekir..) 
+        banMessage: "spam nedeniyle yasaklanmış çekiç tarafından vuruldu!", // MKullanıcı yasaklandığında yazılı mesaj gönderilir. (mesaj '@ Kullanıcı' ile başlar, bu yüzden sadece devam etmek için giriş yapmanız gerekir..) 
         maxDuplicatesWarning: 7,// Bir kullanıcının uyarılmadan önce bir zaman aralığında gönderebileceği maksimum yinelenen mesaj sayısı.
-        maxDuplicatesBan: 10, // 
+        maxDuplicatesBan: 10, 
         deleteMessagesAfterBanForPastDays: 7, 
         exemptRoles: ["Kurucu"], 
         exemptUsers: ["AdemCan#1413"] 
