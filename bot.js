@@ -116,16 +116,16 @@ client.unload = command => {
 client.on('ready', () => {
   // Module Configuration Constructor
    antispam(client, {
-        warnBuffer: 3, // Maximum ammount of messages allowed to send in the interval time before getting warned.
-        maxBuffer: 5, // Maximum amount of messages allowed to send in the interval time before getting banned.
-        interval: 2000, // Amount of time in ms users can send the maxim amount of messages(maxBuffer) before getting banned. 
-        warningMessage: "please stop spamming!", // Message users receive when warned. (message starts with '@User, ' so you only need to input continue of it.) 
-        banMessage: "has been hit by ban hammer for spamming!", // Message sent in chat when user is banned. (message starts with '@User, ' so you only need to input continue of it.) 
-        maxDuplicatesWarning: 7,// Maximum amount of duplicate messages a user can send in a timespan before getting warned.
+        warnBuffer: 3, 
+        maxBuffer: 5,
+        interval: 2000, 
+        warningMessage: "please stop spamming!", // İleti kullanıcıları uyarıldığında alır. (mesaj '@ Kullanıcı' ile başlar, bu yüzden sadece devam etmek için giriş yapmanız gerekir..) 
+        banMessage: "has been hit by ban hammer for spamming!", // MKullanıcı yasaklandığında yazılı mesaj gönderilir. (mesaj '@ Kullanıcı' ile başlar, bu yüzden sadece devam etmek için giriş yapmanız gerekir..) 
+        maxDuplicatesWarning: 7,// Bir kullanıcının uyarılmadan önce bir zaman aralığında gönderebileceği maksimum yinelenen mesaj sayısı.
         maxDuplicatesBan: 10, // 
         deleteMessagesAfterBanForPastDays: 7, 
-        exemptRoles: ["Moderator"], 
-        exemptUsers: ["MrAugu#9016"] 
+        exemptRoles: ["Kurucu"], 
+        exemptUsers: ["AdemCan#1413"] 
       });
       
   // Rest of your code
