@@ -8,7 +8,8 @@ exports.run = (client, message, params) => {
   .setTitle("CS-AT BOT")
   .setDescription('')
   .setColor("GOLD")
-      .setDescription('Hep Daha İleriye Bizimle! \n **Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** ')
+    .setDescription('')
+      .setDescription('Hep Daha İleriye Bizimle! \n **Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** \n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](https://discord.gg/UnZjvxu)')
       .setFooter('© CS-AT BOT')
 
   if (!params[0]) {
@@ -27,7 +28,7 @@ exports.run = (client, message, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['gold-üye'],
+  aliases: ['gold','Gold'],
   permLevel: 0
 };
 
