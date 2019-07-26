@@ -120,19 +120,26 @@ client.unload = command => {
 
 
 
-  if (cmd.toLowerseCase() == `${config.prefix}giveaway`}(
-  var item = "",
+
+
+
+
+
+
+
+  if (cmd.toLowerseCase() == `${config.prefix}giveaway`){
+  var item = "";
   var item;
-  var winnerCount
+  var winnerCount;
   }
 //!giveaway 1(kazanan) 60(60 saniye) Ne çekilişi olcak
 
 
-  for  (var i = 3; , < messageArray.length; i++){
+  for  (var i = 3; i < messageArray.length; i++){
 	  item += (messageArray[i] + " ");
 	  
   }
-	  WinnerCount = Number(messageArray[1];
+	  winnerCount = Number(messageArray[1]);
 	  time  = Number(messageArray[2]);
 	  var embed = new Discord.RichEmbed();
 	  embed.setDescription(item);
@@ -164,7 +171,6 @@ client.unload = command => {
 	 message.channel.send(winnerMessage + " " + haveHas + "won `won ${item}`);
   }, time * 1000);//zaman parametresi
 }
-
 ////////////////////////////////////////////////////
 
 client.on("message",message => {
