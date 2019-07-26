@@ -116,10 +116,15 @@ client.unload = command => {
 
 
 
+ 
+
+
+
   if (cmd.toLowerseCase() == `${config.prefix}giveaway`}(
   var item = "",
   var item;
   var winnerCount
+  }
 //!giveaway 1(kazanan) 60(60 saniye) Ne çekilişi olcak
 
 
@@ -134,7 +139,7 @@ client.unload = command => {
 	  var embedSent = await message.channel.send(embed);
 	  embedSent.react("🎉")
 	  setTimeout(function() {
-	 var peopleReacted = embedSent.reacticons.get("🎉").users;
+	 var peopleReacted = embedSent.reacticons.get("🎉").users.array();
 	 var index = Mat.floor(Math.random() * peopleReacted.length);
 	 var winners = []
 	 var winnerMessage = "",
@@ -143,6 +148,10 @@ client.unload = command => {
 		 	  index = Mat.floor(Math.random() * peopleReacted.length);
 	 }
 	 for (var i = 0; i < winners.length i++);{
+		 if (winners[i].id == bot.user.id){
+			 winners[1].slice(1, 1);
+			 continue;
+		 }
 		 winnerMessage += (winners[i].toString() + " ");
 	 }
      var havehas = "has";
