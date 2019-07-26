@@ -4,12 +4,15 @@ const ayarlar = require('../ayarlar.json');
 
 var prefix = ayarlar.prefix;
 
+
+let abc =   //tanımlancak ** güvenlik kodu.**
+
+  
 exports.run = (client, message, params) => {
   const embedyardim = new Discord.RichEmbed()
   .setTitle("CS-AT BOT")
-  .setDescription('')
   .setColor("GOLD")
-      .setDescription('**!Yardım** ile yardım alabilirsiniz. \n botu davet etmek için \`!davet\`. \n örnek komut kullanımı: \`!küfür-filtre aç\`.  \n **!komutlar (1)** \n herkesin kullanabileceği standart komutlar. \n \`davet\`,\`gold\` \n **!eğlence(2)** \n herkes için kullanılabilecek eğlence komutları. \n  \`aşk-ölçer\`,\`blıktut\`,\`kralol\` \n **!moderasyon (4)** \n yetkililer için moderasyon komutları. \n \`!küfür-filtre aç\`,\`!capslock-filtresi\`,\`reklam-filtresi\`,\`!koruma-sistemi\`,\`sayaç\,\`otorol\`')
+  .setDescription('Hesab güvenlimi ?', ${abc ? "Evet" : "Hayır"} )
       .setFooter('© CS-AT BOT')
 
   if (!params[0]) {
