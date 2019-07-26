@@ -127,50 +127,6 @@ client.unload = command => {
 
 
 
-  if (cmd.toLowerseCase() == `${config.prefix}giveaway`){
-  var item = "";
-  var item;
-  var winnerCount;
-  }
-//!giveaway 1(kazanan) 60(60 saniye) Ne çekilişi olcak
-
-
-  for  (var i = 3; i < messageArray.length; i++){
-	  item += (messageArray[i] + " ");
-	  
-  }
-	  winnerCount = Number(messageArray[1]);
-	  time  = Number(messageArray[2]);
-	  var embed = new Discord.RichEmbed();
-	  embed.setDescription(item);
-	  var embedSent = await message.channel.send(embed);
-	  embedSent.react("🎉")
-	  setTimeout(function() {
-	 var peopleReacted = embedSent.reacticons.get("🎉").users.array();
-	 var index = Mat.floor(Math.random() * peopleReacted.length);
-	 var winners = []
-	 var winnerMessage = "",
-	 for (var 1 = 0; i < winnerCount; 1++){
-		 winners.push(peopleReacted[index])
-		 	  index = Mat.floor(Math.random() * peopleReacted.length);
-	 }
-	 for (var i = 0; i < winners.length i++);{
-		 if (winners[i].id == bot.user.id){
-			 winners[1].slice(1, 1);
-			 continue;
-		 }
-		 winnerMessage += (winners[i].toString() + " ");
-	 }
-     var havehas = "has";
-	 if (winners.length == 1){
-		 haveHas = "has";
-	 }
-	 else {
-		 haveHas = "have";
-	  }
-	 message.channel.send(winnerMessage + " " + haveHas + "won `won ${item}`);
-  }, time * 1000);//zaman parametresi
-}
 ////////////////////////////////////////////////////
 
 client.on("message",message => {
