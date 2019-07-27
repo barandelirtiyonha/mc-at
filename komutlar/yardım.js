@@ -5,15 +5,13 @@ const ayarlar = require('../ayarlar.json');
 var prefix = ayarlar.prefix;
 
 
-let abc =   //tanımlancak ** güvenlik kodu.**
 
-  
 exports.run = (client, message, params) => {
   const embedyardim = new Discord.RichEmbed()
-  .setTitle("CS-AT BOT")
+  .setTitle("MC-AT BOT")
   .setColor("GOLD")
-  .setDescription('Hesab güvenlimi ?', ${abc ? "Evet" : "Hayır"} )
-      .setFooter('© CS-AT BOT')
+  .setDescription('YAKINDA...' )
+      .setFooter('© MC-AT BOT')
 
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
