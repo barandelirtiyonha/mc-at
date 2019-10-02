@@ -8,7 +8,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
   
   let channel = message.mentions.channels.first()
     if (!channel) {
-        message.channel.send(':x: | Bu Özelliği Ayarlamam İçin Bir Kanal Etiketlemelisin Örnek: `!kayit-kanal-ayarla  #kayitkanal`')
+        message.channel.send(' <a:x_:621485408324157460> | Bu Özelliği Ayarlamam İçin Bir Kanal Etiketlemelisin Örnek: `!kayit-kanal-ayarla  #kayitkanal`')
         return
     }
     if(!kanal[message.guild.id]){
@@ -19,7 +19,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
     fs.writeFile("./ayarlar/kayit1.json", JSON.stringify(kanal), (err) => {
         console.log(err)
     })
-    message.channel.send(`:white_check_mark: | ** Üyelerin Kayıt Olacağı Kanal ${channel} Olarak Ayarlandı.** `)
+    message.channel.send(`<a:c_:621485430025748493> | ** Üyelerin Kayıt Olacağı Kanal ${channel} Olarak Ayarlandı.** `)
 }
     
 exports.conf = {
