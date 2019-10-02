@@ -11,7 +11,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: 'otorol',
+  name: 'otorol-yardım',
   description: '',
   usage: 'test'
 };

@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     .setAuthor(`MC-AT BOT`, client.user.avatarURL) 
       .setDescription('**[Website](https://discordapp.com/oauth2/authorize?client_id=625343020438388746&scope=bot&permissions=2146958847)**')
 .setThumbnail(client.user.avatarURL)
-      .addField('** !editle (14)**', '`davet`, `istatistik`, `sor`, `afk`, `avatar`, `emojiler`, `roller`, `jumbo`, `kullanıcı-bilgi`, `ping`, `rol-bilgi`, `sunucu`, `sunucuresmi`')
+      .addField('** !Komutlar (12)**',  '`davet`, `istatistik`, `sor`, `afk`, `avatar`, `emojiler`, `roller`, `jumbo`, `kullanıcı-bilgi`, `ping`, `rol-bilgi`, `sunucu`, `sunucuresmi`')
       .addField('** !editle (13)**', '`küfür`, `modlog`, `otorol`, `otoselam`, `reklam`, `sayaç`, `sil-üye`, `sil`, `vkanal`, `yasakla`, `yaz`')
       .addField('** !editle (4)**', '`beyaz`, `kara`, `eval`, `reboot`')
     .setFooter('© MC-AT BOT')
