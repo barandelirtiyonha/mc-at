@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const db = require('quick.db')
 const ayarlar = require('../ayarlar.json')
 exports.run = async (client, message, args) => {
-//REAL CODE
+//
 
 let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
   if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`Bu komutu kullanabilmek için "\`Sunucuyu Yönet\`" yetkisine sahip olmalısın.`)

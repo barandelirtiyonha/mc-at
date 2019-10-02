@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-//REAL CODE
+
 
 exports.run = (client, message) => {
    message.channel.send('Balık Tuttun Balığı Çekiyorsun..').then(message => {

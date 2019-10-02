@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 exports.run = async (client, message, args) => {
   if (!args[0]) return message.channel.send('Merhaba reklam açmak için !reklam aç yazabilirsin.')
   if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('`SUNUCUYU_YÖNET` yetkisine sahip olmalısın!')
-//REAL CODE
+//
 
   if (args[0] == 'aç') {
     db.set(`kufur_${message.guild.id}`, 'Açık').then(i => {

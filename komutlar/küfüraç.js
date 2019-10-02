@@ -1,7 +1,7 @@
 
 const db = require('quick.db')
 const Discord = require('discord.js')
-//REAL CODE
+//
 
 exports.run = async (client, message, args) => {
   if (!args[0]) return message.channel.send(' Aç yada Kapat yaz! Örnek: !küfürengel aç')

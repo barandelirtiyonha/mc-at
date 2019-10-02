@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const rse = new Discord.Client();
 const Jimp = require('jimp');
 const fs = require('fs');
-//REAL CODE
+//R
 exports.run = async (rse, message, args) => {
     let user;
     

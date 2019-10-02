@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
-//REAL CODE
+//
 
 var prefix = ayarlar.prefix;
 
