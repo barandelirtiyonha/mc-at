@@ -1,40 +1,32 @@
 const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
-//
-
 var prefix = ayarlar.prefix;
-
-
-
-exports.run = (client, message, params) => {
-  const embedyardim = new Discord.RichEmbed()
-  .setTitle("MC-AT BOT")
-  .setColor("GOLD")
-  .setDescription('YAKINDA...' )
-      .setFooter('© MC-AT BOT')
-
-  if (!params[0]) {
-    const commandNames = Array.from(client.commands.keys());
-    const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    message.channel.send(embedyardim);
-  } else {
-    let command = params[0];
-    if (client.commands.has(command)) {
-      command = client.commands.get(command);
-      message.author.send('asciidoc', `= ${command.help.name} = \n${command.help.description}\nDoğru kullanım: ` + prefix + `${command.help.usage}`);
-    }
-  }
+exports.run = (client, message, args) => {
+  
+    const embedyardim = new Discord.RichEmbed()
+    .setColor('#fffa00')
+    .setAuthor(`MC-AT BOT`, client.user.avatarURL) 
+      .setDescription('**[Website](https://discordapp.com/oauth2/authorize?client_id=625343020438388746&scope=bot&permissions=2146958847)**')
+.setThumbnail(client.user.avatarURL)
+      .addField('** !editle (14)**', '`davet`, `istatistik`, `sor`, `afk`, `avatar`, `emojiler`, `roller`, `jumbo`, `kullanıcı-bilgi`, `ping`, `rol-bilgi`, `sunucu`, `sunucuresmi`')
+      .addField('** !editle (13)**', '`küfür`, `modlog`, `otorol`, `otoselam`, `reklam`, `sayaç`, `sil-üye`, `sil`, `vkanal`, `yasakla`, `yaz`')
+      .addField('** !editle (4)**', '`beyaz`, `kara`, `eval`, `reboot`')
+    .setFooter('© MC-AT BOT')
+    .setTimestamp()
+    message.channel.send(embedyardim).catch()
+    
+//bnm işim bu kadar kendin herşeyi editle <3 <3
 };
 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['Yardım'],
-  permLevel: 0
+    enabled: true,
+    guildOnly: false,
+    aliases: ["h", "halp", "help", 'y', 'yadrım'],
+    permLevel: 0
 };
 
 exports.help = {
-  name: 'yardım',
-  description: 'Tüm komutları gösterir.',
-  usage: 'yardım [komut]'
+    name: 'yardım',
+      category: 'Yardım',
+      description: 'Yardım kategorilerini gösteir.',
 };
