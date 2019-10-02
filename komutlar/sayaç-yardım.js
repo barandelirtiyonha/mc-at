@@ -1,5 +1,5 @@
 exports.run = function(client, message, args) {
-        message.channel.send("Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın :shrug: Örnek Kullanım : \n ```css !sayaç-ayarla #kanal <Sayı>``` ");
+        message.channel.send("Belirttiğin Sayı Çok Küçük Veya O Sayıya Zaten Ulaşmışsın :shrug: \n Örnek Kullanım : ```!sayaç-ayarla #kanal <Sayı>``` ");
     };
 //
 

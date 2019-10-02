@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
   const Bilgi = new Discord.RichEmbed()
     .setColor('#000096')
     .setThumbnail(client.user.avatarURL)
-    .addField(`**${client.user.username} | Oto-Cevap Sistemi**`, 'Oto-Cevap Sistemi, Sunucunuza Gelenlerin Bazı Yazıları Yazmaları Durumunda Botun Onlara Verecek Tepkisidir.\nBu Yazılara `sa / slm / selam / selamın aleyküm / sea / selamun aleyküm - Aleyküm Selam, Hoşgeldin!`, `naber / nasılsınız / nbr - İyi, sen?`, `görüşürüz / bye bye / bye / bay / bay bay / bb / güle güle - Hoşçakal!` Dahildir.\nAçmak için **w!otocevap aç**, kapatmak için **w!otocevap kapat** yazmalısınız.')
+    .addField(`**${client.user.username} | Oto-Cevap Sistemi**`, 'Oto-Cevap Sistemi, Sunucunuza Gelenlerin Bazı Yazıları Yazmaları Durumunda Botun Onlara Verecek Tepkisidir.\nBu Yazılara `sa / slm / selam / selamın aleyküm / sea / selamun aleyküm - Aleyküm Selam, Hoşgeldin!`, `naber / nasılsınız / nbr - İyi, sen?`, `görüşürüz / bye bye / bye / bay / bay bay / bb / güle güle - Hoşçakal!` Dahildir.\nAçmak için **!otocevap aç**, kapatmak için **!otocevap kapat** yazmalısınız.')
     .setFooter(client.user.username, client.user.avatarURL)
     .setTimestamp()
   

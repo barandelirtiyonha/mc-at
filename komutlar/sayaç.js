@@ -45,7 +45,7 @@ exports.run = async (client, message, args) => {
   db.set(`sayac_${message.guild.id}`, args[0])
   db.set(`sayacK_${message.guild.id}`, sayackanal.name)
   
-  message.channel.send(`Sayaç **${args[0]}**, sayaç kanalı **${sayackanal}** olarak ayarlandı.`)
+  message.channel.send(` sayaç kanalı **${sayackanal}**, Sayaç **${args[0]}** olarak ayarlandı.`)
 }
  
 exports.conf = {

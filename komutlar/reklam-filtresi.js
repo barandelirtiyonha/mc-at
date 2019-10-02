@@ -4,7 +4,7 @@ const db = require('quick.db');
 exports.run = async (client, message, args) => {
   
   if (!args[0]){
-    message.channel.send("Reklam Engel için Doğru Kullanım: w!reklam-engel aç / w!reklam-engel kapat")
+    message.channel.send("Reklam Engel için Doğru Kullanım: !reklam-engel aç / !reklam-engel kapat")
   }
   if (args[0] === 'aç'){
     message.channel.send("Görünüşe Göre Reklam Koruması Zaten Aktif Dostum :) \n Kick Yetkisi Olanları Engellemez!")
