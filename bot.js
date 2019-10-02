@@ -129,15 +129,6 @@ client.unload = command => {
 
 ////////////////////////////////////////////////////
 
-client.on("message",message => {
-  if(!message.author.bot) return;
-  db.fetch(`usohbet_${message.channel.id}`).then(usdurum => {
-    if(!usdurum || usdurum === 'pasif') return;
-    else {
-      message.delete(3500)
-    }
-})})
-
 /////////////////////////////////////////////////////////
 
 client.on('ready', () => {
@@ -207,30 +198,23 @@ client.on('guildMemberAdd', member => {
 
 //////////////////////////////////////////////////////////
 
-client.on("message", async msg => {
-  db.fetch(`kufur_${msg.guild.id}`).then(i => {
-if (i == 'Açık') {
-        const kufur = ["discord.gg","https//",".com",".xyz",".net"];
-        if (kufur.some(word => msg.content.includes(word))) {
-          try {
-             if (!msg.member.hasPermission("BAN_MEMBERS")) {
-                  
-     
-               
-               msg.delete(); 
-             
-
-                  return msg.reply('Reklam yapmamalısın.').then(msg => msg.delete(3000));
-             }
-          } catch(err) {
-            console.log(err);
-          }
-        } } else if (i == 'Kapalı') {
-
-}
-
+client.on('message', async message => {
+  let ke = await db.fetch(`reklam_${message.guild.id}`)
+  
+  if (ke === "kapali" || ke === undefined || ke === null){
+    return;
+  } else if (ke === "acik") {
+    let reklam = ["discord.gg/", "https://", ".org", ".com", ".cf", ".tk", ".xyz"]
+    if (reklam.some(word => message.content.includes(word))){
+        if (!message.member.hasPermission("BAN_MEMBERS")) {
+        message.delete();
+        message.channel.send("Kurucuya gönderdim!!! Bir daha reklam yapma!")
+        message.guild.owner.send("Sunucunuzda bir kişi reklam yaptı. \nKullanıcı: "+ message.author.tag +" \nMesaj: **"+ message +"** ")
+      }
+    }
+    
+  }
 })
-});
 
 
 /////////////////////////////////////////////////////////
@@ -285,7 +269,90 @@ if (i == 'Açık') {
 });
 
 ////////////////////////////////////////////////////////////
+client.on('message', async (msg, member, guild) => {
+  let DB = require('quick.db')
+  let OtoCevap = await  DB.fetch(`otocevap_${msg.guild.id}`)
+  if(OtoCevap === 'açık') {
+    
+    const OtoCevapSelam = new Discord.RichEmbed()
+      .setColor('#000096')
+      .setDescription(`**Aleyküm Selam, Hoşgeldin ${msg.author.username}!**`)
+    
+    if (msg.content.toLowerCase() === 'sa') { 
+      msg.channel.send(OtoCevapSelam).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'slm') { 
+      msg.channel.send(OtoCevapSelam).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'selam') { 
+      msg.channel.send(OtoCevapSelam).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'sea') { 
+      msg.channel.send(OtoCevapSelam).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'selamun aleyküm') { 
+      msg.channel.send(OtoCevapSelam).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'selamın aleyküm') { 
+      msg.channel.send(OtoCevapSelam).then(msg => msg.delete(3000))
+    }
 
+    
+    const OtoCevapHalhatır = new Discord.RichEmbed()
+      .setColor('#000096')
+      .setDescription(`**İyiyiz, sen nasılsın ${msg.author.username}?**`)
+    
+    if (msg.content.toLowerCase() === 'naber') {
+      msg.channel.send(OtoCevapHalhatır).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'nbr') {
+      msg.channel.send(OtoCevapHalhatır).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'nasılsınız') {
+      msg.channel.send(OtoCevapHalhatır).then(msg => msg.delete(3000))
+    }
+
+    
+    const OtoCevapVeda = new Discord.RichEmbed()
+      .setColor('#000096')
+      .setDescription(`**Hoşçakal ${msg.author.username}!**`)
+    
+    if (msg.content.toLowerCase() === 'görüşürüz') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'bb') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'bye') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'bye bye') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'bay') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'bay bay') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'baybay') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    if (msg.content.toLowerCase() === 'güle güle') {
+      msg.channel.send(OtoCevapVeda).then(msg => msg.delete(3000))
+    }
+    
+    if (msg.content.toLowerCase() === `<@${client.user.id}>`) { //Botu etiketleyince mesaj atar
+      msg.channel.send('Ha efendim knk')
+    }
+  
+    if (msg.content.toLowerCase() === 'yok bişi') {
+      msg.channel.send('LA SEN BENİMLE DALGA MI GEÇİYON')
+    }
+  }
+})
+
+//////////////////
 
 client.elevation = message => {
     if (!message.guild) {

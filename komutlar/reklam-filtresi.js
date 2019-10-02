@@ -1,32 +1,31 @@
-const db = require('quick.db')
-const Discord = require('discord.js')
+const Discord = require('discord.js');
+const db = require('quick.db');
 
 exports.run = async (client, message, args) => {
-  if (!args[0]) return message.channel.send('Merhaba reklam açmak için !reklam aç yazabilirsin.')
-  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('`SUNUCUYU_YÖNET` yetkisine sahip olmalısın!')
-//
-
-  if (args[0] == 'aç') {
-    db.set(`kufur_${message.guild.id}`, 'Açık').then(i => {
-      message.channel.send(' Görünüşe Göre Reklam Koruması Zaten Aktif Dostum :) \n Kick Yetkisi Olanları Engellemez!')
-    })
+  
+  if (!args[0]){
+    message.channel.send("Reklam Engel için Doğru Kullanım: w!reklam-engel aç / w!reklam-engel kapat")
   }
-  if (args[0] == 'kapat') {
-    db.set(`kufur_${message.guild.id}`, 'Kapalı').then(i => {
-      message.channel.send('Reklam Filtresi başarıyla kapatıldı!')
-    })
+  if (args[0] === 'aç'){
+    message.channel.send("Görünüşe Göre Reklam Koruması Zaten Aktif Dostum :) \n Kick Yetkisi Olanları Engellemez!")
+    
+    db.set(`reklam_${message.guild.id}`, "acik")
   }
-
+  if (args[0] === 'kapat'){
+    message.channel.send("Reklam Filtresi başarıyla kapatıldı!.")
+    
+    db.set(`reklam_${message.guild.id}`, "kapali")
+  }
 }
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: ['reklam'],
+  guildOnly: false,
+  aliases: ["reklam"],
   permLevel: 0
-};
-
+}
 exports.help = {
-  name: 'reklam-filtresi',
-  description: 'reklam',
-  usage: 'reklam'
-};
+  name: "reklam-engel",
+  description: "Reklam engel açar yada kapatır.",
+  usage: "w!reklam-engel"
+}
+
