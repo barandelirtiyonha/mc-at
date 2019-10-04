@@ -12,7 +12,7 @@ exports.run = (client, message) => {
   .setThumbnail("")
   .setDescription('Küfür-Reklam Engellemesi İçin Botu Kendi Sunucuna Davet Edebilirsin..')
   .setTimestamp()
-  .addField("» Linkler", `[Destek Sunucusu](https://discord.gg/UnZjvxu)`, false)
+  .addField("Davet Linki.", `[Destek Sunucusu](https://discord.gg/UnZjvxu)`, false)
   .setURL('https://discordapp.com/oauth2/authorize?client_id=603998114361114674&scope=bot&permissions=805306558')
   	.setThumbnail(client.user.avatarURL);
 
