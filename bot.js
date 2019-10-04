@@ -479,6 +479,72 @@ const db = require('quick.db');
   
   })
 //////////////////////////otobotsilici
+client.on("guildMemberAdd", async member => {
+   const fs = require('fs');
+    let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog.json", "utf8"));
+    const gözelkanal = member.guild.channels.get(gkanal[member.guild.id].resim)
+    if (!gözelkanal) return;
+     let username = member.user.username;
+        if (gözelkanal === undefined || gözelkanal === null) return;
+        if (gözelkanal.type === "text") {
+            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/577242119261913090/594920692303265822/hosgeldin.png");
+            const userimg = await Jimp.read(member.user.avatarURL);
+            var font;
+            if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+            else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+            await bg.print(font, 300, 300, member.user.tag);
+            await userimg.resize(187, 169);////boyut
+            await bg.composite(userimg, 317, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
+              setTimeout(function () {
+                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
+              }, 1000);
+              setTimeout(function () {
+                fs.unlink("./img/" + member.id + ".png");
+              }, 10000);
+        }
+    })
+
+client.on('message', async message => {
+    if (message.content === 'fake') {
+        client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
+    }
+});
+
+
+
+/////////////bb-kanal
+client.on("guildMemberRemove", async member => {
+   const fs = require('fs');
+    let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog1.json", "utf8"));
+    const gözelkanal = member.guild.channels.get(gkanal[member.guild.id].resim)
+    if (!gözelkanal) return;
+        let username = member.user.username;
+        if (gözelkanal === undefined || gözelkanal === null) return;
+        if (gözelkanal.type === "text") {            
+                        const bg = await Jimp.read("https://cdn.discordapp.com/attachments/594583488787644447/595138392216436746/gorusuruz.png");
+            const userimg = await Jimp.read(member.user.avatarURL);
+            var font;
+             if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+            else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+            await bg.print(font, 300, 300, member.user.tag);
+            await userimg.resize(189, 173);////boyut
+            await bg.composite(userimg, 317, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
+              setTimeout(function () {
+                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
+              }, 1000);
+              setTimeout(function () {
+                fs.unlink("./img/" + member.id + ".png");
+              }, 10000);
+        }
+    })
+
+
+
+
+
+//////////////////////////
 
 client.elevation = message => {
     if (!message.guild) {
