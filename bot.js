@@ -243,31 +243,20 @@ msg.content.toLowerCase() == 'Selam Naber') {
 
 ////////////////////////////////////////////////////////
 
-client.on("message", async msg => {
-  db.fetch(`kufur_${msg.guild.id}`).then(i => {
-if (i == 'Açık') {
-        const kufur = ["amk","a.m.k","am","a.m","m.k","mk","orosbu çocugu","orospu çocugu","o.ç","oç","oc","o.c","orosbu","orospu","veledi zina","sikerim","sıkerım","s.i.k.e.r.i.m","s.ı.k.e.r.ı.m","piç","pıc","p.i.ç","p.ı.c","orosbu evladı","orospu evladı","amına koyayım","babanı sikim"];
-        if (kufur.some(word => msg.content.includes(word))) {
-          try {
-             if (!msg.member.hasPermission("BAN_MEMBERS")) {
-                  
-     
-               
-               msg.delete(); 
-             
-
-                  return msg.reply('Küfür Etmemelisin.').then(msg => msg.delete(3000));
-             }
-          } catch(err) {
-            console.log(err);
-          }
-        } } else if (i == 'Kapalı') {
-
+client.on("message", msg => {
+  let küfürEngel = db.fetch(`ke_${msg.guild.id}`)
+  if (!msg.guild) return
+  if (küfürEngel === 'kapali') return
+    if (küfürEngel === 'acik') {
+      const küfür = ["mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git"];
+  if (küfür.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.channel.send(new Discord.RichEmbed().setColor('#000000').setDescription('Olm utanmıyon mu yaşına başına bakmadan küfür etmeye he?! Püü senin sıfatına!')).then(message => message.delete(3000));
+    }
 }
-
+    }
 })
-});
-
 ////////////////////////////////////////////////////////////
 client.on('message', async (msg, member, guild) => {
   let DB = require('quick.db')
