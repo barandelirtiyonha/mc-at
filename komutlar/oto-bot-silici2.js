@@ -7,10 +7,11 @@ exports.run = async (bot, message, args) => {
 
   if (!kanal) return message.channel.send(`Kanalıda etiketlemelisiniz.`)
   
-    db.delete(`otobsilici_${kanal.id+message.guild.id}`, "<#"+kanal.id+">")
+    db.set(`otobsilici_${kanal.id+message.guild.id}`, "<#"+kanal.id+">")
     
+        db.set(`otobsilicia_${kanal.id+message.guild.id}`, "acik")
 
-      message.channel.send(`**Artık ${kanal} adlı kanalda bir bot mesaj yazarsa 3 saniye sonra silmeyecek.**`)
+      message.channel.send(`**Artık ${kanal} adlı kanalda bir bot mesaj yazarsa 3 saniye sonra silinecek.**`)
     
   
  
@@ -24,7 +25,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'oto-bot-silici',
+  name: 'oto-bot-silici-kapat',
   description: 'Botun pingini gösterir.',
   usage: ''
 };
