@@ -45,7 +45,7 @@ exports.run = (client, message) => {
     exports.conf = {
         enabled: true,
         guildOnly: false,
-        aliases: ['küfür-engel'],
+        aliases: ['küfür-engel',"küfür"],
         permLevel: 3
       };
       

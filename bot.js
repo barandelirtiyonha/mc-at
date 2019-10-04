@@ -153,14 +153,28 @@ client.on('ready', () => {
 
 ///////////////////////////////////////////////////////////
 
-client.on('guildMemberAdd', member => {
-  db.fetch(`autoRole_${member.guild.id}`).then(i => {
+client.on('guildMemberAdd', async (member, guild, message) => {
+//CodAre
+let role = await  db.fetch(`otorolisim_${member.guild.id}`)
+ let otorol = await db.fetch(`autoRole_${member.guild.id}`)
+ let i = await db.fetch(`otorolKanal_${member.guild.id}`)
+ if (!otorol || otorol.toLowerCase() === 'yok') return;
+else {
  try {
- member.addRole(member.guild.roles.find("name", i))
-} catch (e) {
- console.log('Rol veremedim...')
+  //CodAre
+
+  if (!i) return //CodAre
+
+  member.addRole(member.guild.roles.get(otorol))
+                        var embed = new Discord.RichEmbed()
+                        .setDescription(`**Sunucuya Yeni Katılan** \`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Rolü verildi.**`)
+                        .setColor('0x36393E') //CodAre
+                        .setFooter(`Otorol Sistemi`)
+     member.guild.channels.get(i).send(embed)  } catch (e) {
+ console.log(e)
 }
-})
+}
+
 });
 
 ///////////////////////////////////////////////////////////
@@ -355,7 +369,95 @@ client.on('guildMemberAdd', async member => {
   } 
 
 });
-/////////////////////////
+/////////////////////////linkengelle
+client.on("message", async msg => {
+    if(msg.author.bot) return;
+    if(msg.channel.type === "dm") return;
+        
+    let i = await db.fetch(`reklamFiltre_${msg.guild.id}`)  
+          if (i == 'acik') {
+              const reklam = ["discord.app", "discord.gg", "invite","discordapp","discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az",];
+              if (reklam.some(word => msg.content.toLowerCase().includes(word))) {
+                try {
+                  if (!msg.member.hasPermission("MANAGE_GUILD")) {
+                    msg.delete();                    
+                    let embed = new Discord.RichEmbed()
+                    .setColor(0xffa300)
+                    .setFooter('Gnarge Blocker s  Reklam engellendi.', client.user.avatarURL)
+                    .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
+                    .setDescription("Gnarge Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
+                    .addField('Engellenen mesaj', msg.content, true)
+                    .setTimestamp()                   
+                    msg.guild.owner.user.send(embed)                       
+                    return msg.channel.send(`${msg.author.tag}, Reklam Yapmak Yasak Dostum!`).then(msg => msg.delete(25000));
+                  }              
+                } catch(err) {
+                  console.log(err);
+                }
+              }
+          }
+          if (!i) return;
+          });    
+//////////////////////////////////////////////reklamkivk
+client.on("message", async message => {
+    let uyarisayisi = await db.fetch(`reklamuyari_${message.author.id}`);
+    let reklamkick = await db.fetch(`reklamkick_${message.guild.id}`)
+    let kullanici = message.member;
+    if (reklamkick == 'kapali') return;
+    if (reklamkick == 'acik') {
+        const reklam = ["discord.app", "discord.gg", "invite", "discordapp", "discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az",];
+        if (reklam.some(word => message.content.toLowerCase().includes(word))) {
+            if (!message.member.hasPermission("ADMINISTRATOR")) {
+                message.delete();
+                db.add(`reklamuyari_${message.author.id}`, 1) //uyarı puanı ekleme
+                if (uyarisayisi === null) {
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> reklam kick sistemine yakalandın! Reklam yapmaya devam edersen kickleniceksin (1/3)`)
+                        .setTimestamp()
+                    message.channel.send(uyari)                
+}
+                if (uyarisayisi === 1) {
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> reklam kick sistemine yakalandın! Reklam yapmaya devam edersen kickleniceksin (2/3)`)
+                        .setTimestamp()
+                    message.channel.send(uyari)
+                }
+                if (uyarisayisi === 2) {
+                    message.delete();
+                    await kullanici.kick({
+                        reason: `Reklam kick sistemi`,
+                    })
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> 3 adet reklam uyarısı aldığı için kicklendi. Bir kez daha yaparsa banlanacakç`)
+                        .setTimestamp()
+                    message.channel.send(uyari)
+                }
+                if (uyarisayisi === 3) {
+                    message.delete();
+                    await kullanici.ban({
+                        reason: `Reklam ban sistemi`,
+                    })
+                    db.delete(`reklamuyari_${message.author.id}`)
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> kick yedikten sonra tekrar devam ettiği için banlandı.`)
+                        .setTimestamp()
+                    message.channel.send(uyari)
+                }
+
+            }
+        }
+    }
+});
+////////////////////////////////
 
 client.elevation = message => {
     if (!message.guild) {
