@@ -76,7 +76,8 @@
     "url": "^0.11.0",
     "useful-tools": "^0.2.6",
     "weather-js": "^2.0.0",
-    "ytdl-core": "^0.29.7"
+    "ytdl-core": "^0.29.7",
+    "parse-ms": "^2.0.0"
   },
   "engines": {
     "node": "8.x"
