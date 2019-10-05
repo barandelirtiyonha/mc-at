@@ -603,6 +603,40 @@ let dakdest = await db.fetch(`slowmodee_${msg.author.id}`);
 };       
 });
 ////////////////////////slowmode
+client.on('message', message => {
+var antiraid = db.fetch(`sunucular.${message.guild.id}.spamkoruma`)
+if(!antiraid) return;
+if(message.author.bot) return;
+message.guild.fetchMember(message.author).then(member => {
+if(member.hasPermission('BAN_MEMBERS')) return;
+var b = []
+var aut = []
+setTimeout(() => {
+message.channel.fetchMessages({ limit: 10 }).then(m => {
+m.forEach(a => {
+if(m.filter(v => v.content === a.content).size > m.size / 2) {
+message.guild.fetchMember(m.author).then(member2 => {
+if(member2.hasPermission('BAN_MEMBERS')) return;
+b.push(a)
+aut.push(a.author)
+})}})
+if(!b.includes(":warning: | Saldırgan botlar susturulacak.")) { işlem() }
+else {}
+  
+function işlem() {
+
+if(b.length > 5) {
+  message.channel.send(':warning: | Saldırı yapan botlar susturulacak.')
+  aut.forEach(a => {
+    message.channel.overwritePermissions(a, {
+      "SEND_MESSAGES": false
+    })
+  })
+  message.channel.send(client.emojiler.evet + ' | Saldırı yapan botlar susturuldu.')
+} else return;
+}
+})})})})
+////////////////////////botkoruma
 
 client.elevation = message => {
     if (!message.guild) {
