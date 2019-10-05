@@ -5,8 +5,9 @@ const ayarlar = require('../ayarlar.json')
 exports.run = async (client, message, args) => {
   //
 
-  const sayacsayi = await db.fetch(`sayac_${message.guild.id}`);
+
   const sayackanal = message.mentions.channels.first()
+  const sayacsayi = await db.fetch(`sayac_${message.guild.id}`);
   
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
         
@@ -27,8 +28,8 @@ exports.run = async (client, message, args) => {
       return
     }
     
-    db.delete(`sayac_${message.guild.id}`)
     db.delete(`sayacK_${message.guild.id}`)
+    db.delete(`sayac_${message.guild.id}`)
     message.channel.send(`Sayaç başarıyla sıfırlandı.`)
     return
   }
@@ -43,8 +44,9 @@ exports.run = async (client, message, args) => {
                 return
         }
   
-  db.set(`sayac_${message.guild.id}`, args[0])
   db.set(`sayacK_${message.guild.id}`, sayackanal.name)
+  db.set(`sayac_${message.guild.id}`, args[0])
+  
   
   message.channel.send(` sayaç kanalı **${sayackanal}**, Sayaç **${args[0]}** olarak ayarlandı.`)
 }
