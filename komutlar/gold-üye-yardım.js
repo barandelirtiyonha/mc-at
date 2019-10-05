@@ -6,12 +6,12 @@ var prefix = ayarlar.prefix;
 
 exports.run = (client, message, params) => {
   const embedyardim = new Discord.RichEmbed()
-  .setTitle("MC-AT BOT")
+  .setTitle(`${client.user.username}`)
   .setDescription('')
   .setColor("GOLD")
     .setDescription('')
       .setDescription('Hep Daha İleriye Bizimle! \n\n**Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** \n\n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](https://discord.gg/UnZjvxu)')
-      .setFooter('© MC-AT BOT')
+      .setFooter(`© ${client.user.username}` )
 
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());

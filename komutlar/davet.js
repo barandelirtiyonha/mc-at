@@ -5,10 +5,10 @@ const ayarlar = require('../ayarlar.json');
 
 exports.run = (client, message) => {
   const embed = new Discord.RichEmbed()
-  .setTitle("MC-AT BOT")
+  .setTitle(`${client.user.username}`)
     .setAuthor(message.author.username, message.author.avatarURL)
   .setColor("BLUE")
-  .setFooter('© MC-AT', client.user.avatarURL)
+  .setFooter(`© ${client.user.username}` , client.user.avatarURL)
   .setThumbnail("")
   .setDescription('Küfür-Reklam Engellemesi İçin Botu Kendi Sunucuna Davet Edebilirsin..')
   .setTimestamp()
