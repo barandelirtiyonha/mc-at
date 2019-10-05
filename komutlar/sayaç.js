@@ -10,15 +10,16 @@ exports.run = async (client, message, args) => {
   
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
         
+   if(!sayackanal) {
+   message.channel.send(`Sayaç kanalını etiketlemelisin.`)
+  }
+  
   if(!args[0]) {
     message.channel.send(`Bir sayı yazmalısın.`)
     return
   }
   
-  if(!sayackanal) {
-   message.channel.send(`Sayaç kanalını etiketlemelisin.`)
-  }
-  
+ 
   
   if(args[0] === "sıfırla") {
     if(!sayacsayi) {
