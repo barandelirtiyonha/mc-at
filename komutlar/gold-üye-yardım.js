@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
   .setDescription('')
   .setColor("GOLD")
     .setDescription('')
-      .setDescription('Hep Daha İleriye Bizimle! \n **Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** \n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](https://discord.gg/UnZjvxu)')
+      .setDescription('Hep Daha İleriye Bizimle! \n\n**Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** \n\n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](https://discord.gg/UnZjvxu)')
       .setFooter('© MC-AT BOT')
 
   if (!params[0]) {
