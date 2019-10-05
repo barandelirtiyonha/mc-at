@@ -1,165 +1,42 @@
-const Discord = require('discord.js')
-const db = require('quick.db')
+const Discord = require('discord.js');
 
-exports.run = async (client, message, args, config) => {
-
-    if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send("Bu Komutu kullanmanız için `Sunucu_Yönet` Yetkisine sahip olmalısınız.")
-
-    if (!args[0]) return message.channel.sendEmbed(new Discord.RichEmbed().setAuthor('Doğru kullanım').setDescription("!yavaş-mod [0-∞]").setColor('RANDOM'))
-  if (args[0] > 12) return message.channel.send('**Sayı 12 den büyük olamaz!**')
-    if (args[0] < 0) return message.channel.send('**Sayı 0 dan küçük olamaz!**')
-
-      if (args[0] == '12') {
-                db.set(`${message.guild.id}.slowmode`, '12000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 12")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }  
-  if (args[0] == '11') {
-                db.set(`${message.guild.id}.slowmode`, '11000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 11")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '10') {
-                db.set(`${message.guild.id}.slowmode`, '10000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 10")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '9') {
-                db.set(`${message.guild.id}.slowmode`, '9000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 9")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-    if (args[0] == '8') {
-                db.set(`${message.guild.id}.slowmode`, '8000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 8")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '7') {
-                db.set(`${message.guild.id}.slowmode`, '7000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 7")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '6') {
-                db.set(`${message.guild.id}.slowmode`, '6000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 6")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '5') {
-                db.set(`${message.guild.id}.slowmode`, '5000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 5")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '4') {
-                db.set(`${message.guild.id}.slowmode`, '4000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 4")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '3') {
-                db.set(`${message.guild.id}.slowmode`, '3000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 3")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-      if (args[0] == '2') {
-                db.set(`${message.guild.id}.slowmode`, '2000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 2")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-        if (args[0] == '1') {
-                db.set(`${message.guild.id}.slowmode`, '1000')
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 1")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
-          
-
-    }
-          if (args[0] == '0') {
-                db.delete(`${message.guild.id}.slowmode`)
-
-                const embed = new Discord.RichEmbed()
-                        .setAuthor("Ayarlanan Hız: 0")
-                        .setColor("GREY")
-                message.channel.send(embed)
-                return
+exports.run = async(client, msg, args) => {
+if (msg.channel.type !== "text") return;
+const limit = args[0] ? args[0] : 0;
+  if(!limit) {
+              var embed = new Discord.RichEmbed()
+                .setDescription(`Doğru kullanım: \`!yavaşmod [0/10]\``)
+                .setColor("RANDOM")
+                .setTimestamp() 
+            msg.channel.send({embed})
+            return
           }
+if (limit > 10) {
+    return msg.channel.sendEmbed(new Discord.RichEmbed().setDescription("Yavaş Mod limiti maksimum **10** saniye olabilir.").setColor("RANDOM"));
 }
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["yavaş-mod"],
-  permLevel: 0
-};
+    msg.channel.sendEmbed(new Discord.RichEmbed().setDescription(`📥 **| Başarılı,** bu odada kullanıcılar \`${limit}\` saniye aralıklarla mesaj gönderebilecek.`).setColor("RANDOM"));
+var request = require('request');
+request({
+    url: `https://discordapp.com/api/v7/channels/${msg.channel.id}`,
+    method: "PATCH",
+    json: {
+        rate_limit_per_user: limit
+    },
+    headers: {
+        "Authorization": `Bot ${client.ayarlar.token}`
+    },
+})};
 
-exports.help = {
-  name: 'slowmode', 
-  description: "Sunucuya eklenen botu onaylar.",
-  usage: 'botonayla <bot ismi>'
-};
+
+exports.conf = { // Özel ayarları belirtiyoruz.
+	enabled: true, // Aktif mi değil mi? (true, false)
+	guildOnly: true, // Sadece sunucuda mı kullanılsın? (true, false)
+	aliases: ['yavaş-mod',"slowmode"], // Sadece komutu değilde bunlarıda yazarsa bu işlemi gerçekleştir diyoruz.
+	permLevel: 3,
+}
+
+exports.help = { 
+	name: 'yavaşmod',
+	description: 'Bu bir örnek komuttur.',
+	usage: 'özel' 
+}
