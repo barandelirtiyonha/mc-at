@@ -9,7 +9,7 @@ var prefix = ayarlar.prefix;
 module.exports = client => {
   console.log(`BOT: ${client.user.username} ismi ile giriş yapıldı!`);
   client.user.setStatus("oline");
-  client.user.setGame(`!güvenlikseviyesi🔥!gold 🔥 !yardım 🔥 BETA  0.9.3 `);
+  client.user.setGame(`web https://kc-at-web.glitch.me/ 🔥 !güvenlikseviyesi🔥!gold 🔥 !yardım 🔥 BETA  0.9.3 `);
   console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 };
 
