@@ -64,7 +64,7 @@
     "passport-strategy": "^1.0.0",
     "path": "^0.12.7",
     "queuee": "^1.0.2",
-    "quick.db": "^7.0.0-b12",
+    "quick.db": "^7.0.0-b22",
     "random-puppy": "^1.1.0",
     "randomstring": "^1.1.5",
     "request-promise-native": "^1.0.7",
