@@ -112,7 +112,17 @@ client.unload = command => {
 
 /////////////////////////////////////////////////////
 
-
+client.on("message", async message => {
+    let sayac = db.fetch(`sayac_${message.guild.id}`)
+    let sayack = db.fetch(`sayackanal_${message.guild.id}`)
+    if (!sayack) return;
+    let sayackanal = message.guild.channels.find('name', sayack)
+        if(sayac <= message.guild.members.size) {
+    sayackanal.send(`:tada: Tebrikler \`${message.guild.name}!\` ${sayac} kullanıcıya başarıyla ulaştık! Sayaç başarıyla sıfırlandı.`)
+            db.delete(`sayac_${message.guild.id}`)
+            db.delete(`sayackanal_${message.guild.id}`)
+            }
+});
 
 
 

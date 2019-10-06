@@ -35,11 +35,11 @@ if (!kanal) return message.channel.send(`<a:a_:591907033721077780> Sayaç bildir
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ['sayacayarla', 'sayac', 'sayaçayarla', 'sayac-ayarla', 'sayaç-ayarla'],
+    aliases: [],
     permLevel: 0
 };
 exports.help = {
-    name: 'sayaç',
+    name: 'sayaç-ayarla',
     description: 'Sayacı ayarlar.',
     usage: 'sayaç <sayı> <#Kanal> /' + prefix + 'sayac sıfırla'
 };
