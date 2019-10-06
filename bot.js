@@ -703,34 +703,7 @@ client.on('guildMemberRemove',async member => {
     }
 })
 ///sunucupanel
-///////////////////////////ayarlamalı dm hg/////////////////////////////////
-client.on('guildMemberAdd', async member => {
-  db.fetch(`hgsistemi_${member.guild.id}`).then(x => {
-    if (x == `acik`) {
-  db.fetch(`dmmesaj_${member.guild.id}`).then(ozelhosgeldin =>{
-  if (!ozelhosgeldin) return;
-  member.send(ozelhosgeldin ? ozelhosgeldin.replace('-sunucu-', `${member.guild.name}`) .replace('-kullanıcı-',`${member.user.tag}`) .replace('-id-',`${member.user.id}`) : ``)
-  })
-    } else if (x == `kapali`) {
-      
-    }
-  })
-})
 
-client.on('guildMemberRemove', async member => {
-db.fetch(`hgsistemi_${member.guild.id}`).then(x => {
-    if (x == `acik`) {
-  db.fetch(`dmbbmesaj_${member.guild.id}`).then(ozelgorusuruz =>{
- if (!ozelgorusuruz) return;
-  member.send(ozelgorusuruz ? ozelgorusuruz.replace('-sunucu-', `${member.guild.name}`) .replace('-kullanıcı-',`${member.user.tag}`) .replace('-id-',`${member.user.id}`) : ``)
-
-})
-    } else if (x == `kapali`) {
-      
-    }
-  })
-})
-///////////////////////////////ayarlamalı dm hg///////////////////////////////////
 
 client.elevation = message => {
     if (!message.guild) {
