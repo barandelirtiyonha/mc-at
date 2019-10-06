@@ -21,7 +21,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
     fs.writeFile("./ayarlar/glog1.json", JSON.stringify(gkanal), (err) => {
         console.log(err)
     })
-     message.channel.send(`╔══════════════════════╗`)
+    message.channel.send(`╔══════════════════════╗`)
     message.channel.send(`║${channel} Çıkış Mesaj Kanal ayarlandı.`)
     message.channel.send(`╚══════════════════════╝`)
 }
