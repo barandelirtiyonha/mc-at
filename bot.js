@@ -143,7 +143,7 @@ client.on('ready', () => {
         maxDuplicatesBan: 10, 
         deleteMessagesAfterBanForPastDays: 7, 
         exemptRoles: ["Kurucu"], 
-        exemptUsers: ["AdemCan#1413"] 
+        exemptUsers: [""] 
       });
       
   // Rest of your code
