@@ -3,7 +3,7 @@ dependencies:
   anti-spam: 0.2.7
   array-sort: 1.0.0
   body-parser: 1.19.0
-  canvas: 2.6.0
+  canvas: 2.6.1
   chalk: 2.4.2
   chance: 1.1.0
   cheerio: 1.0.0-rc.3
@@ -66,7 +66,7 @@ dependencies:
   url: 0.11.0
   useful-tools: 0.2.6
   weather-js: 2.0.0
-  ytdl-core: 0.29.7
+  ytdl-core: 1.0.0
 packages:
   /@jimp/bmp/0.8.4/@jimp!custom@0.8.4:
     dependencies:
@@ -694,6 +694,17 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-bEO9f1ThmbknLPxCa8Es7obPlN9W3stB1bo7njlhOFKIdUTldeTqXCh9YclCPAi2pSQs84XA0jq/QEZXSzgyMw==
+  /canvas/2.6.1:
+    dependencies:
+      nan: 2.14.0
+      node-pre-gyp: 0.11.0
+      simple-get: 3.1.0
+    dev: false
+    engines:
+      node: '>=6'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-S98rKsPcuhfTcYbtF53UIJhcbgIAK533d1kJKMwsMwAIFgfd58MOyxRud3kktlzWiEkFliaJtvyZCBtud/XVEA==
   /capture-stack-trace/1.0.1:
     dev: false
     engines:
@@ -3856,7 +3867,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=
-  /ytdl-core/0.29.7:
+  /ytdl-core/1.0.0:
     dependencies:
       html-entities: 1.2.1
       m3u8stream: 0.6.2
@@ -3866,7 +3877,7 @@ packages:
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-mqPuZ1UyspT84lyV1FSU1UAoiQ4H5j52ba3sC1LC43OmL8qNaDIRCGffGlpiakQrc69qsplNWsWEZUF+J5bhJA==
+      integrity: sha512-aP/UBWbZtBSYlqHRYOx1oZ4tMRCAk2I5Y+OJy20/hrrr5XOhgxZ6+vJ20397h1FxYRzOTRSwb3VpBs3/CLe3fA==
   /zeropad/1.1.0:
     dependencies:
       negative-zero: 1.0.0
@@ -3883,7 +3894,7 @@ specifiers:
   anti-spam: ^0.2.7
   array-sort: ^1.0.0
   body-parser: ^1.19.0
-  canvas: ^2.6.0
+  canvas: ^2.6.1
   chalk: ^2.4.2
   chance: ^1.1.0
   cheerio: ^1.0.0-rc.2
@@ -3946,4 +3957,4 @@ specifiers:
   url: ^0.11.0
   useful-tools: ^0.2.6
   weather-js: ^2.0.0
-  ytdl-core: ^0.29.7
+  ytdl-core: ^1.0.0
