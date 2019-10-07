@@ -20,15 +20,6 @@ const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
 
-const app = express();
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping tamamdır.");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
 
 var prefix = ayarlar.prefix;
 

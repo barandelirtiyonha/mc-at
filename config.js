@@ -5,7 +5,7 @@ const config = {
     "oauthSecret": "oQXG8g_NBktGFK4nPbrwJEX-XScvP_Ps", // This is the `client` secret in your bot application page.
     "callbackURL": "https://cotton-sandpaper.glitch.me/callback",
     "sessionSecret": "super-secret-session-thing",
-    "domain": "https://cotton-sandpaper.glitch.me",
+    "domain": "https://.glitch.me",
     "port": 8000
   },
 };
