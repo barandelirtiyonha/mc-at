@@ -141,6 +141,7 @@ module.exports = (client) => {
     if (ayar === {}) return;
     
     if (ayar['prefix']) db.set(`prefix_${guild.id}`, ayar['prefix'])
+    if (ayar['botkoruma']) db.set(`botkoruma_${guild.id}`, ayar['botkoruma'])
     
     res.redirect("/dashboard/"+req.params.guildID+"/manage");
   });
