@@ -3,9 +3,9 @@ const config = {
 
   "dashboard" : {
     "oauthSecret": "oQXG8g_NBktGFK4nPbrwJEX-XScvP_Ps", // This is the `client` secret in your bot application page.
-    "callbackURL": "https://cotton-sandpaper.glitch.me/callback",
+    "callbackURL": "https://kc-at-panel.glitch.me/callback",
     "sessionSecret": "super-secret-session-thing",
-    "domain": "https://.glitch.me",
+    "domain": "https://kc-at-panel.glitch.me",
     "port": 8000
   },
 };
