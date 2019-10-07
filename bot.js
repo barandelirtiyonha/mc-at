@@ -704,6 +704,14 @@ client.on('guildMemberRemove',async member => {
     }
 })
 ///sunucupanel
+client.on('guildMemberAdd', async member => {
+  
+  let tag = await db.fetch(`technotag_${member.guild.id}`);
+  let tagsekil;
+  if (tag == null) tagsekil = member.setNickname(`${member.user.username}`)
+  else tagsekil = member.setNickname(`${tag} ${member.user.username}`)
+});
+//////////////ototag
 
 
 client.elevation = message => {
