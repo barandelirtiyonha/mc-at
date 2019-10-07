@@ -739,4 +739,29 @@ client.on('error', e => {
     console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
+const { promisify } = require('util')
+
+client.config = require("./config.js")
+client.logger = console
+client.wait = promisify(setTimeout)
+client.ayar = db
+
+String.prototype.toProperCase = function() {
+  return this.replace(/([^\W_]+[^\s-]*) */g, function(txt) {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
+Array.prototype.random = function() {
+  return this[Math.floor(Math.random() * this.length)];
+};
+
+process.on("uncaughtException", (err) => {
+  const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
+  console.error("Uncaught Exception: ", errorMsg);
+  process.exit(1);
+});
+
+process.on("unhandledRejection", err => {
+  console.error("Uncaught Promise Error: ", err);
+});
+
 client.login(ayarlar.token);

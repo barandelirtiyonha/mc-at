@@ -10,6 +10,10 @@
     "start": "node bot.js"
   },
   "dependencies": {
+        "helmet": "^3.9.0",
+    "klaw": "^2.1.1",
+    "marked": "^0.5.0",
+     "memorystore": "^1.6.0",
     "anonymous-id": "^0.1.14",
     "anti-spam": "^0.2.7",
     "array-sort": "^1.0.0",
