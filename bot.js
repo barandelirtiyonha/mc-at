@@ -725,6 +725,46 @@ client.on("guildMemberAdd", async member => {
   member.addRole(otorol)
 });
 ////////////////////otorol
+const invites = {};
+
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+
+  wait(1000);
+
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+client.on('guildMemberAdd', member => {
+  
+    let gkanal = db.fetch(`davetK_${member.guild.id}`)
+    const kanala = member.guild.channels.get(gkanal)
+    if (!kanala) return;
+
+ 
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(x => ei.get(x.code).uses < x.uses);
+
+    const davetçi = client.users.get(invite.inviter.id);
+ 
+ 
+  kanala.send(`${member.user.tag} **adlı kullanıcı sunucuya katıldı. Davet eden kullanıcı:** ${davetçi.tag} ( ${invite.uses} **adet daveti var**)`)
+  
+  })
+});
+//////////////////////davettakip
 
 
 client.elevation = message => {
