@@ -680,30 +680,7 @@ client.on("message", async msg => {
 }};
 });
 ////////////////////////seviye
-////sunucupanel
-client.on('guildMemberAdd',async member => {
- const guild = member.guild
-     
-      const kanalcık =  db.fetch(`botPanel_${member.guild.id}`)
-    if (kanalcık) {
-      const kanal = guild.channels.find('id', kanalcık)
-      if (!kanal) return db.delete(`botPanel_${guild.id}`)
-      kanal.setName(`Sunucudaki üye sayısı : ${guild.memberCount}`)
-    }
-})
 
-client.on('guildMemberRemove',async member => {
- const guild = member.guild
-    
- 
-      const kanalcık =  db.fetch(`botPanel_${member.guild.id}`)
-    if (kanalcık) {
-      const kanal = guild.channels.find('id', kanalcık)
-      if (!kanal) return db.delete(`botPanel_${guild.id}`)
-      kanal.setName(`Sunucudaki üye sayısı : ${guild.memberCount}`)
-    }
-})
-///sunucupanel
 client.on('guildMemberAdd', async member => {
   
   let tag = await db.fetch(`technotag_${member.guild.id}`);
