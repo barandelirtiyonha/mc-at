@@ -31,4 +31,4 @@ exports.help = {
     name: 'erkek',
     description: 'Belirttiğiniz kullanıcının kullanıcı adını değiştirir.',
     usage: 'isimdeğiştir @kullanıcı <kullanıcı adı>'
-  }
+}
