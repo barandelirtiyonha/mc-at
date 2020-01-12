@@ -14,7 +14,7 @@ module.exports = async client => {
   
   console.log(`BOT: ${client.user.username} ismi ile giriş yapıldı!`);
   client.user.setStatus("oline");
-  client.user.setGame(`🔥!yılbaşı🔥!gold 🔥 !yardım 🔥 web https://kc-at-panel.glitch.me 🔥 BETA  0.9.3 `);
+  client.user.setGame(`🔥!yılbaşı🔥!gold 🔥 !yardım 🔥BETA  0.0.1 `);
   console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
   require("../util/dashboard.js")(client);
 };
