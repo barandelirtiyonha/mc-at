@@ -1,5 +1,5 @@
 const config = {
-  "token": "",
+  "token": "Njc4OTUwNjY4ODE5NzU5MTMz.XkqQIQ.43RvJOsVct9aGpnUUA-R591cX_Y",
 
   "dashboard" : {
     "oauthSecret": "", // botunuzun client secret tini buraya yazin

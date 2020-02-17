@@ -36,5 +36,5 @@ exports.conf = {
 exports.help = {
     name: 'hg-kanal',
     description: 'Giriş Çıkış Kanalını Ayarlar.',
-    usage: 'm!hg-kanal <#kanal>'
+    usage: '!hg-kanal <#kanal>'
 }
