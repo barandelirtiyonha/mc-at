@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
   .setDescription('')
   .setColor("GOLD")
     .setDescription('')
-      .setDescription('Hep Daha İleriye Bizimle! \n\n**Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** \n\n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](https://discord.gg/UnZjvxu)')
+      .setDescription('Hep Daha İleriye Bizimle! \n\n**Harika Özellikler İçeren Gold Üye Sistemi Hakkında!** \n\n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](https://discord.gg/Z2zuGCR)')
       .setFooter(`© ${client.user.username}` )
 
   if (!params[0]) {

@@ -162,14 +162,14 @@ let role = await  db.fetch(`otorolisim_${member.guild.id}`)
  if (!otorol || otorol.toLowerCase() === 'yok') return;
 else {
  try {
-  //CodAre
+  //Baran
 
-  if (!i) return //CodAre
+  if (!i) return //Baran
 
   member.addRole(member.guild.roles.get(otorol))
                         var embed = new Discord.RichEmbed()
                         .setDescription(`**Sunucuya Yeni Katılan** \`${member.user.tag}\` **Kullanıcısına** \`${role}\` **Rolü verildi.**`)
-                        .setColor('0x36393E') //CodAre
+                        .setColor('0x36393E') //Baran
                         .setFooter(`Otorol Sistemi`)
      member.guild.channels.get(i).send(embed)  } catch (e) {
  console.log(e)
@@ -384,9 +384,9 @@ client.on("message", async msg => {
                     msg.delete();                    
                     let embed = new Discord.RichEmbed()
                     .setColor(0xffa300)
-                    .setFooter('Gnarge Blocker s  Reklam engellendi.', client.user.avatarURL)
+                    .setFooter('Mechanic Bot Reklam engellendi.', client.user.avatarURL)
                     .setAuthor(msg.guild.owner.user.username, msg.guild.owner.user.avatarURL)
-                    .setDescription("Gnarge Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
+                    .setDescription("Mechanic Bot Reklam sistemi, " + `***${msg.guild.name}***` + " adlı sunucunuzda reklam yakaladım.")
                     .addField('Reklamı yapan kişi', 'Kullanıcı: '+ msg.author.tag +'\nID: '+ msg.author.id, true)
                     .addField('Engellenen mesaj', msg.content, true)
                     .setTimestamp()                   
