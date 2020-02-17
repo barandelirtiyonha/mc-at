@@ -24,8 +24,8 @@ exports.conf = {
   permLevel: 0
 }
 exports.help = {
-  name: "reklam-engel",
+  name: "",
   description: "Reklam engel açar yada kapatır.",
-  usage: "m!reklam-engel"
+  usage: "mc!reklam-engel"
 }
 
