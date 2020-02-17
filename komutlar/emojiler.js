@@ -70,4 +70,4 @@ module.exports.help = {
   description: 'Sayfalı emojiler',
   usage: 'emoji'
 };
-//XiR
+//MC-BOT
