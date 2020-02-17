@@ -26,6 +26,6 @@ exports.conf = {
 exports.help = {
   name: "reklam-engel",
   description: "Reklam engel açar yada kapatır.",
-  usage: "w!reklam-engel"
+  usage: "m!reklam-engel"
 }
 

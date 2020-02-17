@@ -28,6 +28,6 @@ exports.conf = {
 };
 exports.help = {
   name: 'ultra-sohbet-temizleyici',
-  description: 'REAL CODE Tarafından Hazırlanmıştır!',
+  description: 'Mechanic Bot Yapımcısı Tarafından Hazırlanmıştır!',
   usage: ''
 };

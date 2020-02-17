@@ -79,6 +79,6 @@ exports.help = {
   name: 'kullanıcı-bilgi',
   category: "kullanıcı",
   description: 'İstediğiniz kullanıcı hakkında bilgi verir.',
-  usage: 'w!kullanıcı-bilgi veya w!kullanıcı-bilgi <@kişi-etiket>'
+  usage: 'mc!kullanıcı-bilgi veya m!kullanıcı-bilgi <@kişi-etiket>'
 };
    

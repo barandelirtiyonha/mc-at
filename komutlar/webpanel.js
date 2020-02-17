@@ -10,7 +10,7 @@ exports.run = (client, message, params) => {
   .setDescription('')
   .setColor("WebPanel")
     .setDescription('')
-      .setDescription('Hep Daha İleriye Bizimle! \n\n**Harika Özellikler İçeren web panel Sistemi Hakkında!** \n\n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](https://kc-at-panel.glitch.me/)')
+      .setDescription('Hep Daha İleriye Bizimle! \n\n**Harika Özellikler İçeren web panel Sistemi Hakkında!** \n\n Bizlere Destek Olmak Ve Harika Özellikler Kazanmak İçin [Tıkla](yakında)')
       .setFooter(`© ${client.user.username}` )
 
   if (!params[0]) {

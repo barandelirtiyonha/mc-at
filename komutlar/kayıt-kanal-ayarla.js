@@ -8,7 +8,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
   
   let channel = message.mentions.channels.first()
     if (!channel) {
-        message.channel.send(' <a:x_:621485408324157460> | Bu Özelliği Ayarlamam İçin Bir Kanal Etiketlemelisin Örnek: `!kayit-kanal-ayarla  #kayitkanal`')
+        message.channel.send(' <a:x_:621485408324157460> | Bu Özelliği Ayarlamam İçin Bir Kanal Etiketlemelisin Örnek: `m!kayit-kanal-ayarla  #kayitkanal`')
         return
     }
     if(!kanal[message.guild.id]){

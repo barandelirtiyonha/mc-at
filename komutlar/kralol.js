@@ -14,7 +14,7 @@ exports.run = (client, message, params) => {
     .setColor(3447003)
     .setTimestamp()
     .setDescription('')
-    .setURL('https://discord.gg/GpbPVJ7')
+    .setURL('https://discord.gg/Z2zuGCR')
         .setImage(`https://media.giphy.com/media/F0uvYzyr2a7Li/giphy.gif`)
     return message.channel.sendEmbed(sunucubilgi);
     }
