@@ -10,7 +10,7 @@ exports.run = (client, message) => {
 	const istatistikozel = new Discord.RichEmbed()
     .setColor(0x36393F)
 .setDescription(`${client.user.username}`)
-  .addField(` Bot Sahipleri:`, `<@312307937949384715>`, true)
+  .addField(` Bot Sahipleri:`, `<@536470606166622208>`, true)
   .addField('Shard:', '1/1', true)
 	.addField("Bellek Kullanımı:", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true)
   .addField("Sunucu Sayısı:", `${client.guilds.size.toLocaleString()}`, true)
@@ -37,4 +37,4 @@ exports.help = {
   description: 'Bot ile ilgili bilgi verir.',
   usage: 'bilgi'
 };
-//XiR
+//MC-BOT

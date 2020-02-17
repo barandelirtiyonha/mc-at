@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
   {
         const embed = new Discord.RichEmbed()
   .setTitle('BAŞARILI')
-  .setDescription('Sunucu [Burada](Discord Sunucu Linkiniz) Tanıtıldı! \n\n 12 Saat Sonra Sunucunuzu Tekrardan Tanıtabilirsiniz. \n\n Sunucunu Tanıtabilmek İçin Beni [Ekle!](BOT DAVET LİNKİ)')
+  .setDescription('Sunucu [Burada](https://discord.gg/Z2zuGCR) Tanıtıldı! \n\n 12 Saat Sonra Sunucunuzu Tekrardan Tanıtabilirsiniz. \n\n Sunucunu Tanıtabilmek İçin Beni [Ekle!](BOT DAVET LİNKİ)')
   .setColor('GREEN')
  message.channel.sendEmbed(embed);
     message.channel.createInvite({maxAge: 0}).then((invite) => {
@@ -49,7 +49,7 @@ exports.run = async (client, message, args) => {
   if (kullanildii[message.guild.id].gunlukkullanim == 1)
   {
   message.channel.send({embed: {
-      description: '**BAŞARISIZ TANITIM** \n\nBu komut zaten kullanılmış!\n\nSunucunu 12 saate 1 defa tanıtabilirsin! \n\n[ßȲ ǤṜĪ₦ƉĒṜ | Discord.js | Kod Paylaşım](https://discord.gg/KJ6faYU) \n[Righter Ekle](https://discordapp.com/oauth2/authorize?client_id=525313553734041600&scope=bot&permissions=2146958847)'
+      description: '**BAŞARISIZ TANITIM** \n\nBu komut zaten kullanılmış!\n\nSunucunu 12 saate 1 defa tanıtabilirsin! \n\n[Baran #0972 | Discord.js | Kod Paylaşım](https://discord.gg/Z2zuGCR) \n[Destek İçin Ekle](Yakında)'
             }});
   }
 };
