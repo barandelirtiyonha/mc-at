@@ -12,7 +12,7 @@
   "dependencies": {
     "helmet": "^3.21.1",
     "klaw": "^2.1.1",
-    "marked": "^0.6.3",
+    "marked": "^1.1.1",
     "memorystore": "^1.6.0",
     "anonymous-id": "^0.1.14",
     "anti-spam": "^0.2.7",
